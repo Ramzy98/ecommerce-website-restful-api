@@ -2,14 +2,14 @@
   "dev": {
     "driver": "pg",
     "host": "127.0.0.1",
-    "database": "full_stack_db",
+    "database": "ecommerce_db",
     "user": "ahmad",
     "password": "123456"
   },
   "test": {
     "driver": "pg",
     "host": "127.0.0.1",
-    "database": "full_stack_db_test",
+    "database": "ecommerce_db_test",
     "user": "ahmad",
     "password": "123456"
   }
