@@ -2,7 +2,8 @@ import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import user_route from './handlers/user';
+import user_route from './handlers/users';
+import product_route from './handlers/products';
 
 dotenv.config();
 const app: express.Application = express();
@@ -20,6 +21,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 user_route(app);
+product_route(app);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

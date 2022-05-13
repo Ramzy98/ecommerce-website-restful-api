@@ -5,8 +5,8 @@ const { SALT_ROUNDS, PEPPER } = process.env;
 
 export type User = {
   id: number;
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   email: string;
   password: string;
 };
@@ -34,7 +34,7 @@ export class UserStore {
 
   async create(user: User): Promise<User> {
     try {
-      const { firstName, lastName, email, password } = user;
+      const { first_name, last_name, email, password } = user;
       const conn = await database.connect();
       const sql =
         'INSERT INTO users (first_name, last_name, email, password) VALUES ($1, $2, $3, $4) RETURNING *';
@@ -43,8 +43,8 @@ export class UserStore {
         Number(SALT_ROUNDS)
       );
       const result = await conn.query(sql, [
-        firstName,
-        lastName,
+        first_name,
+        last_name,
         email,
         hashedPassword,
       ]);
@@ -73,15 +73,15 @@ export class UserStore {
     }
   }
 
-  async update(user: User): Promise<User> {
-    const { id, firstName, lastName, email, password } = user;
+  async update(id: number, user: User): Promise<User> {
+    const { first_name, last_name, email, password } = user;
     const conn = await database.connect();
     const sql =
       'UPDATE users SET first_name = $1, last_name = $2, email = $3, password = $4 WHERE id = $5 RETURNING *';
 
     const result = await conn.query(sql, [
-      firstName,
-      lastName,
+      first_name,
+      last_name,
       email,
       password,
       id,
