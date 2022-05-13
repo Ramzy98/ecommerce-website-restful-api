@@ -1,6 +1,6 @@
 import database from '../database';
 
-export type order = {
+export type Order = {
   id: number;
   user_id: number;
   quantity: number;
@@ -8,7 +8,7 @@ export type order = {
 };
 
 export class OrderStore {
-  async index(): Promise<order[]> {
+  async index(): Promise<Order[]> {
     try {
       const orders = await database.query('SELECT * FROM orders');
       return orders.rows;
@@ -17,7 +17,7 @@ export class OrderStore {
     }
   }
 
-  async show(id: number): Promise<order> {
+  async show(id: number): Promise<Order> {
     try {
       const order = await database.query('SELECT * FROM orders WHERE id = $1', [
         id,
@@ -28,7 +28,7 @@ export class OrderStore {
     }
   }
 
-  async create(order: order): Promise<order> {
+  async create(order: Order): Promise<Order> {
     try {
       const { user_id, quantity, status } = order;
       const conn = await database.connect();
@@ -42,7 +42,7 @@ export class OrderStore {
     }
   }
 
-  async getOrdersByUserId(user_id: number): Promise<order[]> {
+  async getOrdersByUserId(user_id: number): Promise<Order[]> {
     try {
       const orders = await database.query(
         'SELECT * FROM orders WHERE user_id = $1',
@@ -54,7 +54,7 @@ export class OrderStore {
     }
   }
 
-  async getOrdersByStatus(status: string): Promise<order[]> {
+  async getOrdersByStatus(status: string): Promise<Order[]> {
     try {
       const orders = await database.query(
         'SELECT * FROM orders WHERE status = $1',
@@ -70,7 +70,7 @@ export class OrderStore {
     order_id: number,
     product_id: number,
     quantity: number
-  ): Promise<order> {
+  ): Promise<Order> {
     try {
       const conn = await database.connect();
       const sql =
@@ -83,7 +83,7 @@ export class OrderStore {
     }
   }
 
-  async update(id: number, order: order): Promise<order> {
+  async update(id: number, order: Order): Promise<Order> {
     try {
       const { user_id, quantity, status } = order;
       const conn = await database.connect();
@@ -97,7 +97,7 @@ export class OrderStore {
     }
   }
 
-  async delete(id: number): Promise<order> {
+  async delete(id: number): Promise<Order> {
     try {
       const conn = await database.connect();
       const sql = 'DELETE FROM orders WHERE id = $1 RETURNING *';
