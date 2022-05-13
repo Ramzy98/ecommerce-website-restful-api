@@ -1,7 +1,7 @@
 {
   "name": "ecommerce-website-restful-api",
   "version": "1.0.0",
-  "description": "A RESTful API created with node, express and Postgre. The API allows creation of users, products and orders. Every user can",
+  "description": "A RESTful API created with node, express and Postgres. The API allows creation of users, products and orders. Every user can",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/server.ts",
