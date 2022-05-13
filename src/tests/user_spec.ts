@@ -1,13 +1,12 @@
 import { User, UserStore } from '../models/user';
 
 const store = new UserStore();
-let createdUser: User;
 
 describe('UserStore', () => {
   describe('create', () => {
     it('should create a user', async () => {
       const user = await store.create({
-        email: 'new@email.com',
+        email: 'JohnDoe@email.com',
         first_name: 'John',
         last_name: 'Doe',
         password: 'password',
@@ -19,7 +18,6 @@ describe('UserStore', () => {
       expect(user.first_name).toBeDefined();
       expect(user.last_name).toBeDefined();
       expect(user.password).toBeDefined();
-      createdUser = user;
     });
   });
 
@@ -41,7 +39,7 @@ describe('UserStore', () => {
 
   describe('show', () => {
     it('should return a user', async () => {
-      const user = await store.show(createdUser.id);
+      const user = await store.show(1);
       expect(user).toBeDefined();
       expect(user.id).toBeDefined();
       expect(user.email).toBeDefined();
@@ -53,7 +51,7 @@ describe('UserStore', () => {
 
   describe('authenticate', () => {
     it('should authenticate a user', async () => {
-      const user = await store.authenticate(createdUser.email, 'password');
+      const user = await store.authenticate('JohnDoe@email.com', 'password');
       expect(user).toBeDefined();
       expect(user.id).toBeDefined();
       expect(user.email).toBeDefined();
@@ -65,8 +63,8 @@ describe('UserStore', () => {
 
   describe('update', () => {
     it('should update a user', async () => {
-      const user = await store.update(createdUser.id, {
-        email: createdUser.email,
+      const user = await store.update(1, {
+        email: 'JohnDoe@email.com',
         first_name: 'newfirstname',
         last_name: 'newlastname',
         password: 'newpassword',
@@ -82,7 +80,7 @@ describe('UserStore', () => {
 
   describe('delete', () => {
     it('should delete a user', async () => {
-      const user = await store.destroy(createdUser.id);
+      const user = await store.destroy(1);
       expect(user).toBeDefined();
       expect(user.id).toBeDefined();
       expect(user.email).toBeDefined();
