@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import user_route from './handlers/users';
 import product_route from './handlers/products';
+import order_routes from './handlers/orders';
 
 dotenv.config();
 const app: express.Application = express();
@@ -22,6 +23,7 @@ app.get('/', (req: Request, res: Response) => {
 
 user_route(app);
 product_route(app);
+order_routes(app);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
