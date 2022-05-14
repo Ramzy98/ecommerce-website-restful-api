@@ -20,6 +20,18 @@ A RESTful API created with node, express and Postgres. The API allows creation o
     4.1. npm run build
     4.2. yarn build
 
+5.  You must have a .env file with the following variables:
+    5.1. PORT
+    5.2. POSTGRES_HOST
+    5.3. POSTGRES_USER
+    5.4. POSTGRES_PASSWORD
+    5.5. POSTGRES_DB_NAME
+    5.6 POSTGRES_DB_NAME_TEST
+    5.7 NODE_ENV
+    5.8 BCRYPT_PASSWORD
+    5.9 SALT_ROUNDS
+    5.10 JWT_SECRET
+
 ## PORT NUMBERS
 
     - Node server is running on port 3000
