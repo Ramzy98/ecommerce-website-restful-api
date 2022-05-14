@@ -32,11 +32,6 @@ A RESTful API created with node, express and Postgres. The API allows creation o
         5.9 SALT_ROUNDS
         5.10 JWT_SECRET
 
-## PORT NUMBERS
-
-    - Node server is running on port 3000
-    - Postgres is running on localhost
-
 ## SERVER SETUP
 
     - After installing the dependencies, run the server with the command:
@@ -50,7 +45,7 @@ A RESTful API created with node, express and Postgres. The API allows creation o
         - npm run test
         - yarn test
 
-## Databas SETUP
+## Database SETUP
 
     We are using Postgres to store the data.
     - Create a user called ecommerce_user with password ecommerce_user.
@@ -67,6 +62,11 @@ A RESTful API created with node, express and Postgres. The API allows creation o
         GRANT ALL PRIVILEGES ON DATABASE ecommerce_db_test TO ecommerce_user_test;
     - then migrate the database with the command:
         - db:migrate up
+
+## PORT NUMBERS
+
+    - Node server is running on port 3000
+    - Postgres is running on port 5432
 
 ## Database Schema
 
