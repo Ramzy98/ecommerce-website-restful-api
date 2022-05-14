@@ -4,33 +4,33 @@ A RESTful API created with node, express and Postgres. The API allows creation o
 
 ## Setup
 
-1.  Installation Instructions :
-    1.1. npm install
-    1.2. yarn install
+    1.  Installation Instructions :
+        1.1. npm install
+        1.2. yarn install
 
-2.  Run the server:
-    2.1. npm run start
-    2.2. yarn start
+    2.  Run the server:
+        2.1. npm run start
+        2.2. yarn start
 
-3.  Run the tests:
-    3.1. npm run test
-    3.2. yarn test
+    3.  Run the tests:
+        3.1. npm run test
+        3.2. yarn test
 
-4.  Run the build:
-    4.1. npm run build
-    4.2. yarn build
+    4.  Run the build:
+        4.1. npm run build
+        4.2. yarn build
 
-5.  You must have a .env file with the following variables:
-    5.1. PORT
-    5.2. POSTGRES_HOST
-    5.3. POSTGRES_USER
-    5.4. POSTGRES_PASSWORD
-    5.5. POSTGRES_DB_NAME
-    5.6 POSTGRES_DB_NAME_TEST
-    5.7 NODE_ENV
-    5.8 BCRYPT_PASSWORD
-    5.9 SALT_ROUNDS
-    5.10 JWT_SECRET
+    5.  You must have a .env file with the following variables:
+        5.1. PORT
+        5.2. POSTGRES_HOST
+        5.3. POSTGRES_USER
+        5.4. POSTGRES_PASSWORD
+        5.5. POSTGRES_DB_NAME
+        5.6 POSTGRES_DB_NAME_TEST
+        5.7 NODE_ENV
+        5.8 BCRYPT_PASSWORD
+        5.9 SALT_ROUNDS
+        5.10 JWT_SECRET
 
 ## PORT NUMBERS
 
