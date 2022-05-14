@@ -50,10 +50,21 @@ A RESTful API created with node, express and Postgres. The API allows creation o
         - npm run test
         - yarn test
 
-## POSTGRES SETUP
+## Databas SETUP
 
-    - Create a new database called ecommerce_db for development.
-    - Create a new database called ecommerce_db_test for testing.
+    We are using Postgres to store the data.
+    - Create a user called ecommerce_user with password ecommerce_user.
+       CREATE USER ecommerce_user WITH PASSWORD 'ecommerce_user';
+    - Create a database called ecommerce_db.
+        CREATE DATABASE ecommerce_db;
+    - Create a database called ecommerce_db_test.
+        CREATE DATABASE ecommerce_db_test;
+    - Grant the ecommerce_user user access to the ecommerce_db database.
+        GRANT ALL PRIVILEGES ON DATABASE ecommerce_db TO ecommerce_user;
+    - Create a user called ecommerce_user_test with password ecommerce_user_test.
+        CREATE USER ecommerce_user_test WITH PASSWORD 'ecommerce_user_test';
+    - Grant the ecommerce_user_test user access to the ecommerce_db_test database.
+        GRANT ALL PRIVILEGES ON DATABASE ecommerce_db_test TO ecommerce_user_test;
     - then migrate the database with the command:
         - db:migrate up
 
